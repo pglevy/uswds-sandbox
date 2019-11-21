@@ -1,11 +1,6 @@
 title: USWDS Sandbox
-baseurl: "/uswds-sandbox"
-url: "https://pglevy.github.io"
-
-plugins:
-  - jekyll-relative-links
-relative_links:
-  enabled: true
+baseurl: ""
+url: ""
 
 exclude:
   - assets/js/src
