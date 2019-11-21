@@ -1,5 +1,5 @@
 title: USWDS Sandbox
-baseurl: ""
+baseurl: "/uswds-sandbox"
 url: "https://pglevy.github.io/uswds-sandbox"
 
 exclude:
