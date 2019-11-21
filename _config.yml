@@ -1,6 +1,6 @@
 title: USWDS Sandbox
 baseurl: "/uswds-sandbox"
-url: "https://pglevy.github.io"
+url: "https://pglevy.github.io/"
 
 exclude:
   - assets/js/src
