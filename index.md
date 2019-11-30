@@ -119,8 +119,9 @@ title: Home Page
 	<section class="usa-hero">
 		<div class="grid-container">
 			<div class="usa-hero__callout">
-				<h1 class="usa-hero__heading"><span class="usa-hero__heading--alt">Hero callout:</span>Bring attention to a project priority</h1>
-				<p>Support the callout with some short explanatory text. You don’t need more than a couple of sentences.</p><a class="usa-button" href="javascript:void(0)">Call to action</a>
+				<h1 class="usa-hero__heading"><span class="usa-hero__heading--alt">A design system for the</span>federal government</h1>
+				<p>We make it easier to build accessible, mobile-friendly government websites for the American public.</p>
+				<a class="usa-button" href="javascript:void(0)">Download the Latest</a>
 			</div>
 		</div>
 	</section>
