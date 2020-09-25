@@ -7,3 +7,4 @@ node_modules
 .jekyll-cache
 *.sublime-project
 *.sublime-workspace
+assets/uswds
