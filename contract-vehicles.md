@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Contract Vehicles
+permalink: /contract-vehicles/
 ---
 ## A Focus on Federal
 
