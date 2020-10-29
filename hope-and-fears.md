@@ -2,9 +2,40 @@
 layout: default
 title: Hopes and fears
 permalink: awareness/hopes-and-fears
+button-label: This is an awesome button
+button-classes: usa-button--outline
+legend-start: Start date
+hint-start: This is when it's starting
+legend-end: End date
+hint-end: This is when it's ending
+alert-type: 1 
+# 0 = info, 1 = warning, 2 = error
 ---
 
+{% include alert.html %}
+
+<ul>
+{% for member in site.data.members %}
+  <li>
+    <a href="https://github.com/{{ member.github }}">
+      {{ member.name }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
+
+
 # {{page.title}}
+
+{% include date-input-start.html %}
+{% include date-input-end.html %}
+
+{% include button.html %}
+
+
+[This is the one you really want](#){: .usa-button}
+
+[But you might want this one](#){: .usa-button .usa-button--outline}
 
 ## Why
 

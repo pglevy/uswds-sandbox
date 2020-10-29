@@ -5,8 +5,131 @@
 <html lang="en">
 {% include head.html %}
 
+<main id="main-content">
+  {% assign hero_contents = site.data.singles | where: "name", "hero" %}
+  {% for item in hero_contents %}
+	<section class="usa-hero">
+		<div class="grid-container">
+			<div class="usa-hero__callout">
+				<h1 class="usa-hero__heading"><span class="usa-hero__heading--alt">{{ item.heading }}</h1>
+				<p>{{ item.body }}</p>
+				<a class="usa-button" href="javascript:void(0)">{{ item.action }}</a>
+      </div>
+		</div>
+  </section>
+  {% endfor %}
 
-  {{ content }}
+  {% assign tagline_contents = site.data.singles | where: "name", "tagline" %}
+  {% for tagline in tagline_contents %}
+  <section class="grid-container usa-section">
+		<div class="grid-row grid-gap">
+			<div class="tablet:grid-col-4">
+				<h2 class="font-heading-xl margin-top-0 tablet:margin-bottom-0">{{ tagline.heading }}</h2>
+			</div>
+			<div class="tablet:grid-col-8 usa-prose">
+				<p class="font-body-md">{{ tagline.body }}</p>
+			</div>
+		</div>
+  </section>
+  {% endfor %}
+  
+  {% assign feature_contents = site.data.repeats | where: "section", "featured" %}
+  <section class="usa-graphic-list usa-section usa-section--dark">
+		<div class="grid-container">
+			<div class="usa-graphic-list__row grid-row grid-gap">
+        {% for feature in feature_contents limit:2 %}
+				<div class="usa-media-block tablet:grid-col">
+					<img class="usa-media-block__img" src="{{ feature.graphic }}" alt="Alt text" width="50%">
+					<div class="usa-media-block__body">
+						<h3 class="usa-graphic-list__heading"><a href="{{ feature.url }}">{{ feature.heading }}</a></h3>
+						<p>{{ feature.body }}</p>
+					</div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="usa-graphic-list__row grid-row grid-gap">
+        {% for feature in feature_contents limit: 2 offset:2 %}
+				<div class="usa-media-block tablet:grid-col">
+					<img class="usa-media-block__img" src="{{ feature.graphic }}" alt="Alt text" width="50%">
+					<div class="usa-media-block__body">
+						<h3 class="usa-graphic-list__heading"><a href="{{ feature.url }}">{{ feature.heading }}</a></h3>
+						<p>{{ feature.body }}</p>
+					</div>
+        </div>
+        {% endfor %}
+      </div>
+		</div>
+	</section>
+  
+  {% assign corona_contents = site.data.singles | where: "name", "corona" %}
+  {% for item in corona_contents %}
+  <section id="test-section-id" class="usa-section">
+		<div class="grid-container">
+			<h2 class="font-heading-xl margin-y-0">{{ item.heading }}</h2>
+			<p class="font-body-lg line-height-sans-4">{{ item.body }}</p>
+			<a class="usa-button usa-button--big" href="{{ item.url }}">{{ item.action }}</a>
+		</div>
+	</section>
+  {% endfor %}
+
+</main>
+
+<footer class="usa-footer">
+	<div class="grid-container usa-footer__return-to-top">
+		<a href="#">Return to top</a>
+	</div>
+	<div class="usa-footer__primary-section">
+		<nav class="usa-footer__nav">
+			<ul class="grid-row grid-gap">
+        {% assign primary_links = site.data.links | where: "type", "primary" %}
+        {% for link in primary_links %}
+				<li class="mobile-lg:grid-col-4 desktop:grid-col-auto usa-footer__primary-content">
+					<a class="usa-footer__primary-link" href="{{ link.url }}">{{ link.name }}</a>
+        </li>
+        {% endfor %}
+			</ul>
+		</nav>
+	</div>
+	<div class="usa-footer__secondary-section">
+		<div class="grid-container">
+			<div class="grid-row grid-gap">
+				<div class="usa-footer__logo grid-row mobile-lg:grid-col-6 mobile-lg:grid-gap-2">
+					<div class="mobile-lg:grid-col-auto">
+						<img class="usa-footer__logo-img" src="/uswds-sandbox/assets/img/usda-symbol.svg" alt="Logo" width="200">
+					</div>
+					<div class="mobile-lg:grid-col-auto">
+						<h3 class="usa-footer__logo-heading">{{ site.title }}</h3>
+					</div>
+				</div>
+				<div class="usa-footer__contact-links mobile-lg:grid-col-6">
+					<div class="usa-footer__social-links grid-row grid-gap-1">
+            {% assign social_links = site.data.links | where: "type", "social" %}
+            {% for link in social_links %}
+						<div class="grid-col-auto">
+							<a class="usa-social-link usa-social-link--{{ link.name | downcase }}" href="{{ link.url }}">
+								<span>{{ link.name }}</span>
+							</a>
+            </div>
+            {% endfor %}
+					</div>
+					<h3 class="usa-footer__contact-heading">Agency Contact Center</h3>
+					<address class="usa-footer__address">
+						<div class="usa-footer__contact-info grid-row grid-gap">
+							<div class="grid-col-auto">
+								<a href="tel:1-800-555-5555">(800) CALL-GOVT</a>
+							</div>
+							<div class="grid-col-auto">
+								<a href="mailto:info@agency.gov">info@agency.gov</a>
+							</div>
+						</div>
+					</address>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
   <script src="{{ "/assets/uswds/js/uswds.min.js" | relative_url }}"></script>
 </body>
 </html>

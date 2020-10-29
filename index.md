@@ -2,6 +2,7 @@
 layout: default
 title: Home Page
 ---
+<!-- 
 <div>
 	<a class="usa-skipnav" href="#main-content">Skip to main content</a>
 </div>
@@ -256,4 +257,4 @@ title: Home Page
 			</div>
 		</div>
 	</div>
-</footer>
+</footer> -->

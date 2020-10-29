@@ -1,0 +1,17 @@
+﻿[
+	{
+		"title": "This is card 1",
+		"body": "This is the content for card 1. \r\n\r\nIt has some line breaks in it.",
+		"CTA": "Do something"
+	},
+	{
+		"title": "This is card 2",
+		"body": "This is the content for card 2. \r\n\r\nIt has some line breaks in it too.",
+		"CTA": "Do this now"
+	},
+	{
+		"title": "This is card 3",
+		"body": "This is the content for card 1. \r\n\r\nIt has some line breaks in it.",
+		"CTA": "Do something"
+	}
+]

@@ -1,0 +1,4 @@
+﻿heading,body,type
+Informative status,Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.,info
+Warning status,As a notification that keeps people informed of the status of the system and which may or may not require the user to respond. This includes errors, warnings, and general updates.,warning
+Error status,Don’t include notifications that aren’t related to the user’s current goal.,error

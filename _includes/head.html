@@ -12,7 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <link rel="stylesheet" href="{{ "/assets/uswds/css/styles.css" | relative_url }}?{{site.time | date: '%s%N'}}">
+  <!-- <link rel="stylesheet" href="{{ "/assets/uswds/css/styles.css" | relative_url }}?{{site.time | date: '%s%N'}}"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uswds/2.9.0/css/uswds.min.css" integrity="sha512-1JfROzJI5km8+inC3KrHAsJ4Ufjl2nD7/TbCBXoMUeXi0LIAZntfLQr2S6ifV0lCuO0mWOOlNJNTgKzkj7b7wA==" crossorigin="anonymous" />
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="preload" href="{{ "/assets/uswds/js/uswds.min.js" | relative_url }}" as="script">
 </head>
@@ -26,7 +27,7 @@
       <header class="usa-banner__header">
         <div class="usa-banner__inner">
           <div class="grid-col-auto">
-            <img class="usa-banner__header-flag" src={{ "assets/uswds/img/us_flag_small.png" |relative_url }} alt="U.S. flag">
+            <img class="usa-banner__header-flag" src={{ "/assets/uswds/img/us_flag_small.png" | relative_url }} alt="U.S. flag">
           </div>
           <div class="grid-col-fill tablet:grid-col-auto">
             <p class="usa-banner__header-text">An official website of the United States government</p>
@@ -41,7 +42,7 @@
     <div class="usa-banner__content usa-accordion__content" id="gov-banner">
       <div class="grid-row grid-gap-lg">
         <div class="usa-banner__guidance tablet:grid-col-6">
-          <img class="usa-banner__icon usa-media-block__img" src="assets/uswds/img/icon-dot-gov.svg" alt="Dot gov">
+          <img class="usa-banner__icon usa-media-block__img" src={{ "/assets/uswds/img/icon-dot-gov.svg" | relative_url }} alt="Dot gov">
           <div class="usa-media-block__body">
             <p>
               <strong>The .gov means it’s official.</strong>
@@ -51,7 +52,7 @@
           </div>
         </div>
         <div class="usa-banner__guidance tablet:grid-col-6">
-          <img class="usa-banner__icon usa-media-block__img" src="assets/uswds/img/icon-https.svg" alt="Https">
+          <img class="usa-banner__icon usa-media-block__img" src={{ "/assets/uswds/img/icon-https.svg" | relative_url }} alt="Https">
           <div class="usa-media-block__body">
             <p>
               <strong>The site is secure.</strong>
@@ -71,44 +72,51 @@
 <div class="usa-overlay"></div>
 <header class="usa-header usa-header--extended"><div class="usa-navbar">
   <div class="usa-logo" id="extended-logo">
-    <em class="usa-logo__text"><a href="/" title="Home" aria-label="Home">U.S. Web Design System</a></em>
+    <em class="usa-logo__text"><a href="/" title="Home" aria-label="Home">{{ site.title }}</a></em>
   </div>
   <button class="usa-menu-btn">Menu</button>
 </div>
 <nav aria-label="Primary navigation" class="usa-nav">
-  <div class="usa-nav__inner"><button class="usa-nav__close"><img src="assets/uswds/img/close.svg" alt="close"></button>
-    <ul class="usa-nav__primary usa-accordion"><li class="usa-nav__primary-item">
-      <button class="usa-accordion__button usa-nav__link  usa-current" aria-expanded="false" aria-controls="extended-nav-section-one"><span>Current section</span></button>
-      <ul id="extended-nav-section-one" class="usa-nav__submenu"><li class="usa-nav__submenu-item">
-        <a href="#">Navigation link</a>
-      </li><li class="usa-nav__submenu-item">
-      <a href="#">Navigation link</a>
-    </li><li class="usa-nav__submenu-item">
-    <a href="#">Navigation link</a>
-  </li></ul></li><li class="usa-nav__primary-item">
-  <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="extended-nav-section-two"><span>Section</span></button>
-  <ul id="extended-nav-section-two" class="usa-nav__submenu"><li class="usa-nav__submenu-item">
-    <a href="#">Navigation link</a>
-  </li><li class="usa-nav__submenu-item">
-  <a href="#">Navigation link</a>
-</li><li class="usa-nav__submenu-item">
-<a href="#">Navigation link</a>
-</li></ul></li><li class="usa-nav__primary-item">
-<a class="usa-nav__link" href="javascript:void(0)"><span>Simple link</span></a>
-</li></ul><div class="usa-nav__secondary">
-<ul class="usa-nav__secondary-links"><li class="usa-nav__secondary-item">
-  <a href="">Secondary link</a>
-</li><li class="usa-nav__secondary-item">
-<a href="">Another secondary link</a>
-</li></ul><form class="usa-search usa-search--small ">
-<div role="search">
-  <label class="usa-sr-only" for="extended-search-field-small">Search small</label>
-  <input class="usa-input" id="extended-search-field-small" type="search" name="search">
-  <button class="usa-button" type="submit"><span class="usa-sr-only">Search</span></button>
-</div>
-</form>
-</div>
-</div>
+  <div class="usa-nav__inner"><button class="usa-nav__close"><img src={{ "/assets/uswds/img/close.svg" | relative_url }}
+        alt="close"></button>
+    <ul class="usa-nav__primary usa-accordion">
+      {% assign primary_links = site.data.links | where: "type", "primary" %}
+      {% for link in primary_links %}
+      <li class="usa-nav__primary-item">
+        <button class="usa-accordion__button usa-nav__link" aria-expanded="false"
+          aria-controls="{{ link.name }}"><span>{{ link.name }}</span></button>
+        <ul id="{{ link.name }}" class="usa-nav__submenu">
+          <li class="usa-nav__submenu-item">
+            <a href="#">Navigation link</a>
+          </li>
+          <li class="usa-nav__submenu-item">
+            <a href="#">Navigation link</a>
+          </li>
+          <li class="usa-nav__submenu-item">
+            <a href="#">Navigation link</a>
+          </li>
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="usa-nav__secondary">
+      <ul class="usa-nav__secondary-links">
+        {% assign utility_links = site.data.links | where: "type", "utility" %}
+        {% for link in utility_links %}
+        <li class="usa-nav__secondary-item">
+          <a href="{{ link.url }}">{{ link.name }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <form class="usa-search usa-search--small ">
+        <div role="search">
+          <label class="usa-sr-only" for="extended-search-field-small">Search small</label>
+          <input class="usa-input" id="extended-search-field-small" type="search" name="search">
+          <button class="usa-button" type="submit"><span class="usa-sr-only">Search</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
 </nav>
 </header>
 
@@ -116,4 +124,4 @@
 
 
 <main id="main-content">
-    <div class="grid-container usa-prose margin-top-3 margin-bottom-4">
+

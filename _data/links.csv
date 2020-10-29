@@ -1,0 +1,22 @@
+name,url,graphic,type,parent
+Glossary,https://www.usda.gov/glossary,,utility,
+Ask USDA,https://ask.usda.gov/s/?utm_source=USDA&utm_medium=homepage&utm_campaign=homepage%20referrals,,utility,
+Recalls,https://www.fsis.usda.gov/wps/portal/fsis/topics/recalls-and-public-health-alerts,,utility,
+Contact Us,https://ask.usda.gov/s/contactsupport,,utility,
+Home,https://www.usda.gov/,,primary,
+Topics,,,primary,
+Our Agency,,,primary,
+Media,,,primary,
+Animals,https://www.usda.gov/topics/animals,,secondary,topics
+Biotechnology,https://www.usda.gov/topics/biotechnology,,secondary,topics
+Broadband,https://www.usda.gov/broadband,,secondary,topics
+About USDA,https://www.usda.gov/our-agency/about-usda,,secondary,agency
+Agencies,https://www.usda.gov/our-agency/agencies,,secondary,agency
+Careers,https://www.usda.gov/our-agency/careers,,secondary,agency
+Agency News Releases,https://www.usda.gov/media/agency-news-releases,,secondary,media
+Agency Reports,https://www.usda.gov/media/agency-reports,,secondary,media
+Blogs,https://www.usda.gov/media/blog,,secondary,media
+Facebook,https://www.facebook.com/usda/,,social,
+Twitter,https://www.twitter.com/usda/,,social,
+YouTube,https://www.youtube.com/usda/,,social,
+RSS,https://www.usda.gov/rss-feeds,,social,

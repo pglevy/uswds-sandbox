@@ -1,0 +1,8 @@
+{% for alert in site.data.alerts %}
+<div class="usa-alert usa-alert--{{ alert.type }}" >
+    <div class="usa-alert__body">
+        <h3 class="usa-alert__heading">{{ alert.type }}</h3>
+        <p class="usa-alert__text">{{ alert.heading }}</p>
+    </div>
+</div>
+{% endfor %}
