@@ -80,21 +80,24 @@
   <div class="usa-nav__inner"><button class="usa-nav__close"><img src={{ "/assets/uswds/img/close.svg" | relative_url }}
         alt="close"></button>
     <ul class="usa-nav__primary usa-accordion">
+      <li class="usa-nav__primary-item">
+        <button class="usa-button usa-nav__link">
+          <span>Home</span>
+        </button>
+      </li>
       {% assign primary_links = site.data.links | where: "type", "primary" %}
       {% for link in primary_links %}
+      {% assign current_parent = link.name %}
       <li class="usa-nav__primary-item">
         <button class="usa-accordion__button usa-nav__link" aria-expanded="false"
           aria-controls="{{ link.name }}"><span>{{ link.name }}</span></button>
         <ul id="{{ link.name }}" class="usa-nav__submenu">
+          {% assign secondary_links = site.data.links | where: "parent", current_parent %}
+          {% for link in secondary_links %}
           <li class="usa-nav__submenu-item">
-            <a href="#">Navigation link</a>
+            <a href="{{ link.url }}">{{ link.name }}</a>
           </li>
-          <li class="usa-nav__submenu-item">
-            <a href="#">Navigation link</a>
-          </li>
-          <li class="usa-nav__submenu-item">
-            <a href="#">Navigation link</a>
-          </li>
+          {% endfor %}
         </ul>
       </li>
       {% endfor %}
