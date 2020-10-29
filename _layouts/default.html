@@ -13,7 +13,7 @@
 			<div class="usa-hero__callout">
 				<h1 class="usa-hero__heading"><span class="usa-hero__heading--alt">{{ item.heading }}</h1>
 				<p>{{ item.body }}</p>
-				<a class="usa-button" href="javascript:void(0)">{{ item.action }}</a>
+				<a class="usa-button" href="{{ item.url }}">{{ item.action }}</a>
       </div>
 		</div>
   </section>
@@ -115,12 +115,12 @@
 					<h3 class="usa-footer__contact-heading">Agency Contact Center</h3>
 					<address class="usa-footer__address">
 						<div class="usa-footer__contact-info grid-row grid-gap">
+              {% assign contact_links = site.data.links | where: "type", "contact" %}
+              {% for link in contact_links %}
 							<div class="grid-col-auto">
-								<a href="tel:1-800-555-5555">(800) CALL-GOVT</a>
-							</div>
-							<div class="grid-col-auto">
-								<a href="mailto:info@agency.gov">info@agency.gov</a>
-							</div>
+								<a href="{{ link.url }}">{{ link.title }}</a>
+              </div>
+              {% endfor %}
 						</div>
 					</address>
 				</div>
