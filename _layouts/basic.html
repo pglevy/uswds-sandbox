@@ -12,12 +12,13 @@
 	{{content}}
 	
 	<ul>
-		{% for alert in site.data.alerts %}
-		  <li>
-			{{alert.body}}
-		  </li>
-		{% endfor %}
-		</ul>
+	{% for alert in site.data.alerts.records %}
+		<li>
+		<strong>{{alert.fields.heading}}</strong><br>
+		{{alert.fields.body}}
+		</li>
+	{% endfor %}
+	</ul>
 
 
 </main>
