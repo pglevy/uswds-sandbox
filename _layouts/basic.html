@@ -8,17 +8,19 @@
 <main id="main-content">
 
 
-
+	<div class="grid-container">
 	{{content}}
-	
 	<ul>
-	{% for alert in site.data.alerts.records %}
-		<li>
-		<strong>{{alert.fields.heading}}</strong><br>
-		{{alert.fields.body}}
-		</li>
-	{% endfor %}
-	</ul>
+		{% for alert in site.data.alerts.records %}
+			<li>
+			<strong>{{alert.fields.heading}}</strong><br>
+			{{alert.fields.body}}
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
+
+	
 
 
 </main>

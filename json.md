@@ -3,6 +3,8 @@ title: Get JSON
 layout: basic
 ---
 
-# Should be some content here
+# Alert data pulled from a JSON url
+
+[Alert data source](https://v1.nocodeapi.com/pglevy/airtable/LDTzULYnuAgBNkGH?tableName=alerts)
 
 
