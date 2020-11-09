@@ -5,6 +5,10 @@ url: "https://pglevy.github.io"
 plugins:
   - jekyll-get-json
 
+jekyll_get_json:
+  - data: alerts
+    json: https://v1.nocodeapi.com/pglevy/airtable/LDTzULYnuAgBNkGH?tableName=alerts
+
 exclude:
   - assets/js/src
   - Gemfile*

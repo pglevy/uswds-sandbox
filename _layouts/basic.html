@@ -1,0 +1,30 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+{% include head.html %}
+
+<main id="main-content">
+
+
+
+	{{content}}
+	
+	<ul>
+		{% for alert in site.data.alerts %}
+		  <li>
+			{{alert.body}}
+		  </li>
+		{% endfor %}
+		</ul>
+
+
+</main>
+
+
+
+
+  <script src="{{ "/assets/uswds/js/uswds.min.js" | relative_url }}"></script>
+</body>
+</html>
