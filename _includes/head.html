@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}?{{site.time | date: '%s%N'}}">
+  <link rel="stylesheet" href="{{ "/assets/uswds/css/styles.css" | relative_url }}?{{site.time | date: '%s%N'}}">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uswds/2.9.0/css/uswds.min.css" integrity="sha512-1JfROzJI5km8+inC3KrHAsJ4Ufjl2nD7/TbCBXoMUeXi0LIAZntfLQr2S6ifV0lCuO0mWOOlNJNTgKzkj7b7wA==" crossorigin="anonymous" /> -->
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="preload" href="{{ "/assets/uswds/js/uswds.min.js" | relative_url }}" as="script">
